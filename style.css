@@ -18,10 +18,7 @@
 
 body {
   min-height: 100vh;
-  background: url("./images/bg-pattern-top.svg") left bottom 250px no-repeat,
-    url("./images/bg-pattern-bottom.svg") right top 350px no-repeat,
-    var(--dCyan);
-  background-size: 50%, 50%;
+  background-color: var(--dCyan);
   display: grid;
   place-items: center;
   text-align: center;
@@ -30,10 +27,16 @@ body {
 
 main {
   min-height: 100vh;
-  width: 375px;
+  width: 100vw;
   padding: 1rem;
   display: grid;
   place-items: center;
+  background-image: url("./images/bg-pattern-top.svg"),
+    url("./images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 50vw bottom 40vh, left 48vw top 48vh;
+  
+  overflow: auto;
 }
 
 /*******************
@@ -43,6 +46,7 @@ main {
 .container {
   margin: 0;
   padding: 0;
+  min-width: 343px;
   max-width: 100%;
   height: auto;
   background: white;
@@ -58,21 +62,21 @@ main {
 
 #heroBG {
   height: 135px;
-  background: url(./images/bg-pattern-card.svg);
+  background: url("./images/bg-pattern-card.svg");
+  background-size: 100%;
   max-width: 100%;
-
   position: relative;
 }
 
 #hero {
   background: url("./images/image-victor.jpg") center no-repeat;
-
+  background-size: 100%;
   width: 80px;
   height: 80px;
-  border: 3px solid white;
+  border: 4px solid white;
   border-radius: 50%;
   position: absolute;
-  left: 113px;
+  left: 131.5px;
   top: 95px;
 }
 
@@ -89,17 +93,18 @@ h1 {
   font-size: 1.125rem;
   font-weight: 700;
   color: var(--vdBlue);
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
 #textSection span {
   color: var(--dGreyishBlue);
+  font-weight: 400;
 }
 
 #textSection > p {
   color: var(--dGreyishBlue);
-  padding: 1rem 0px 1.5rem;
-  border-bottom: 1px solid var(--dGray);
+  padding: 0.5rem 0px 1.5rem;
+  border-bottom: 0.5px solid var(--dGray);
 }
 
 /******************
@@ -107,9 +112,9 @@ h1 {
 *******************/
 
 #stats {
-  margin: 2rem 1rem;
+  margin: 1.5rem 1rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   gap: 3rem;
 }
 
@@ -128,4 +133,7 @@ h1 {
 .items > p {
   margin: 0;
   color: var(--dGreyishBlue);
+  font-size: 0.675rem;
+  font-weight: 400;
+  letter-spacing: 2px;
 }
